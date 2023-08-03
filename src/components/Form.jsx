@@ -9,17 +9,8 @@ const Form = ({setList, setControl2}) => {
     }
     const handleSubmit = async () => {
         event.preventDefault();
-        // const user2 = { ...user };
-        // const referencia = await addDoc(collection(db, "users3"), user2);
-        // const actualizar = doc(db, "users3", referencia.id);
-        // await updateDoc(actualizar, {
-        //     id: referencia.id,
-        // });
-        // setList(prev => [...prev, {...user, id:referencia.id} ])
         setList(prev => [ {...user}]);
-        setControl2(false)
-
-        
+        setControl2(false);
     }
     return (
         <form onSubmit={handleSubmit}>

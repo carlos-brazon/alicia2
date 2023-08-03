@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import present from "../assets/inicio.jpeg";
 import Form from './Form';
-import Invitation from './invitation';
 import  imgFelix  from "../assets/felix.jpg";
+import Invitation2 from './Invitation2';
 
 const Layout = () => {
     const [control, setControl] = useState(true)
     const [control2, setControl2] = useState(true)
     const [list, setList] = useState([]);
-    const felix= ['felix', 'thais']
+    const array =['felix', 'thais', 'angel', 'dannireth','oscar', 'mileidy']
+ 
     const felixText='hola tio felix'
     console.log(list);
     
@@ -30,7 +31,7 @@ const Layout = () => {
                 <p>Pero primero tienes que darme tu nombre</p>
                 <Form setList={setList} setControl2={setControl2} />
             </div>
-            <Invitation text={felix.includes(list[0]?.nombre) ? felixText : null} url={felix.includes(list[0]?.nombre) ? imgFelix : null} control2={control2} />
+            <Invitation2 text={array.includes(list[0]?.nombre) ? felixText : null} url={array.includes(list[0]?.nombre) ? imgFelix : null} control2={control2} />
             <Outlet />
         </div>
     )
